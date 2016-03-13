@@ -87,7 +87,7 @@ void sendError(void *client_sockfd)
     FILE *fp_send;
 
     char status[] = "HTTP/1.0 400 Bad Request\r\n";
-    char header[] = "Server: Moon Server\r\nContent-Type: text/html\r\n\r\n";
+    char header[] = "Server: Strweb Server\r\nContent-Type: text/html\r\n\r\n";
     char body[] = "<html><head><title>Bad Request</title></head><body><p>Connect failed,please check network!</p></body></html>";
 
     /*send*/
@@ -123,7 +123,7 @@ void catHTML(void *client_sockfd,char *filename)
     FILE *fp_send;
 
     char status[] = "HTTP/1.0 200 OK\r\n";
-    char header[] = "Server: Moon Server\r\nContent-Type: text/html\r\n\r\n";
+    char header[] = "Server: Strweb Server\r\nContent-Type: text/html\r\n\r\n";
 
     /*send status and header*/
     safe_write(c_sockfd,status,strlen(status));
@@ -178,7 +178,7 @@ void catJPEG(void *client_sockfd,char *filename)
     FILE *fp_send;
 
     char status[] = "HTTP/1.0 200 OK\r\n";
-    char header[] = "Server: Moon Server\r\nContent-Type: image/jpeg\r\n\r\n";
+    char header[] = "Server: Strweb Server\r\nContent-Type: image/jpeg\r\n\r\n";
 
     /*send status and header*/
     safe_write(c_sockfd,status,strlen(status));
@@ -236,7 +236,7 @@ void catPHP(void *client_sockfd, char *filename, char *query)
     char msg[100];
     char buf[MAXSIZE];
     char status[] = "HTTP/1.0 200 OK\r\n";
-    char header[] = "Server: Moon Server\r\n";
+    char header[] = "Server: Strweb Server\r\n";
     int i, contentLength, paddingLength;
     time_t t_send;
     FILE *fp_send;
